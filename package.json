@@ -1,9 +1,12 @@
 {
     "name": "react-native-spreadsheet-view",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Spreadsheet View for react-native",
     "private": false,
     "license": "MIT",
+    "files": [
+        "dist/*"
+    ],
     "main": "./dist/index",
     "types": "./dist/types",
     "author": {
@@ -17,6 +20,10 @@
         "react": "~17.0.0",
         "react-native": "~0.68.0",
         "typescript": "~4.5"
+    },
+    "dependencies": {
+        "react": "^17.0.0",
+        "react-native": "^0.68.0"
     },
     "scripts": {
         "build": "tsc "
