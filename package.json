@@ -1,6 +1,6 @@
 {
     "name": "react-native-spreadsheet-view",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Spreadsheet View for react-native",
     "private": false,
     "license": "MIT",
@@ -8,7 +8,7 @@
         "dist/*"
     ],
     "main": "./dist/index",
-    "types": "./dist/types",
+    "types": "./dist/index",
     "author": {
         "email": "hello@lmswork.com",
         "name": "LemanK",
