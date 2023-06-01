@@ -58,6 +58,7 @@ export const SpreadsheetView = forwardRef<
 
     separatorStyle,
 
+    rowStyle,
     cellStyle,
 
     CellComponent,
@@ -317,7 +318,7 @@ export const SpreadsheetView = forwardRef<
     []
   );
 
-  const onHorizatalScroll = useCallback(
+  const onBodyVerticalScroll = useCallback(
     (evt: NativeSyntheticEvent<NativeScrollEvent>) => {
       const { contentOffset } = evt.nativeEvent;
 
@@ -331,7 +332,7 @@ export const SpreadsheetView = forwardRef<
     },
     []
   );
-  const onVerticalScroll = useCallback(
+  const onBodyHorizontalScroll = useCallback(
     (evt: NativeSyntheticEvent<NativeScrollEvent>) => {
       const { contentOffset } = evt.nativeEvent;
 
@@ -419,14 +420,15 @@ export const SpreadsheetView = forwardRef<
     RowComponent: props.RowComponent,
     numColumns,
     numRows,
+    rowStyle,
     cellStyle,
     contentSize: internalData.current.contentSize,
     rectForIndexPath: getRectForIndexPath,
     cellForIndexPath: getCellForIndexPath,
     distanceForColumn: getDistanceForColumn,
     distanceForRow: getDistanceForRow,
-    sizeForColumn: getSizeForRow,
-    sizeForRow: getSizeForColumn,
+    sizeForColumn: getSizeForColumn,
+    sizeForRow: getSizeForRow,
     indexPathFromOffset: getIndexPathFromOffset,
   };
 
@@ -447,6 +449,8 @@ export const SpreadsheetView = forwardRef<
   }, [sizeForRow]);
 
   useEffect(() => {
+
+
     measureLayout();
   }, []);
 
@@ -561,7 +565,8 @@ export const SpreadsheetView = forwardRef<
           )}
           <ScrollView
             horizontal={false}
-            onScroll={onHorizatalScroll}
+            onMomentumScrollEnd={onBodyVerticalScroll}
+            onScroll={onBodyVerticalScroll}
             scrollEventThrottle={24}
             ref={tableWrapperRef}
             bounces={false}
@@ -574,7 +579,7 @@ export const SpreadsheetView = forwardRef<
             ]}
           >
             <SpreadsheetScrollView
-              testID="table"
+              testID="tableBody"
               control={control}
               horizontal={true}
               ref={tableRef}
@@ -585,7 +590,8 @@ export const SpreadsheetView = forwardRef<
               offsetColumn={_frozenColumns}
               distanceColumn={getDistanceForColumn(_frozenColumns)}
               scrollEnabled={true}
-              onScroll={onVerticalScroll}
+              onMomentumScrollEnd={onBodyHorizontalScroll}
+              onScroll={onBodyHorizontalScroll}
               scrollEventThrottle={24}
               scrollsToTop={scrollsToTop}
               contentInset={contentInsets}

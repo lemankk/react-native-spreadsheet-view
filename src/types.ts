@@ -16,7 +16,7 @@ export interface ISpreadsheetSize {
 export interface ISpreadsheetRect
   extends ISpreadsheetPosition,
     ISpreadsheetSize {}
-export interface ISpreadsheetCornerIndexPaths {
+export interface ISpreadsheetIndexPathRange {
   tl: ISpreadsheetIndexPath;
   tr: ISpreadsheetIndexPath;
   bl: ISpreadsheetIndexPath;
@@ -87,6 +87,7 @@ export interface ISpreadsheetViewProps {
   contentStyle?: ViewStyle;
   contentInsets?: Insets;
 
+  rowStyle?: ViewStyle;
   cellStyle?: ViewStyle;
 
   scrollIndicatorInsets?: Insets;
@@ -111,6 +112,7 @@ export interface ISpreadsheetViewControlProps {
   distanceForRow: (index: number) => number;
   rectForIndexPath: (indexPath: ISpreadsheetIndexPath) => ISpreadsheetRect;
 
+  rowStyle?: ViewStyle;
   cellStyle?: ViewStyle;
   cellForIndexPath: GetCellForIndexPathCallback;
   sizeForRow: (index: number) => number;
