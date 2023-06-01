@@ -1,6 +1,6 @@
 import { View } from "react-native";
-import { SpreadsheetRowProps } from "./types";
 import { styles } from "./styles";
+import { SpreadsheetRowProps } from "./types";
 
 export function SpreadsheetRow({
   children,

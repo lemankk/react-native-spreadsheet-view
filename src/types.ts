@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactElement } from "react";
-import { Insets, ScrollView, ViewProps, ViewStyle } from "react-native";
+import { Insets, ViewProps, ViewStyle } from "react-native";
 
 export interface ISpreadsheetIndexPath {
   column: number;
@@ -23,18 +23,22 @@ export interface ISpreadsheetCornerIndexPaths {
   br: ISpreadsheetIndexPath;
 }
 
-export type SpreadsheetCellProps = PropsWithChildren<ViewProps & {
-  indexPath: ISpreadsheetIndexPath;
-}>;
-export type SpreadsheetRowProps = PropsWithChildren<ViewProps & {
-  row: number;
-}>;
+export type SpreadsheetCellProps = PropsWithChildren<
+  ViewProps & {
+    indexPath: ISpreadsheetIndexPath;
+  }
+>;
+export type SpreadsheetRowProps = PropsWithChildren<
+  ViewProps & {
+    row: number;
+  }
+>;
 
 export type SpreadsheetCellComponentType =
   | React.FC<SpreadsheetCellProps>
   | React.ComponentClass<SpreadsheetCellProps>;
 
-  export type SpreadsheetRowComponentType =
+export type SpreadsheetRowComponentType =
   | React.FC<SpreadsheetRowProps>
   | React.ComponentClass<SpreadsheetRowProps>;
 
@@ -123,6 +127,9 @@ export type SpreadsheetViewRef = {
   renderItemAtIndexPaths: (indexPaths: ISpreadsheetIndexPath[]) => void;
   renderItemAtRow: (row: number) => void;
   renderItemAtColumn: (column: number) => void;
-  scrollTo: (input: {x?: number, y?: number, animated?: boolean}) => void
-  scrollToIndexPath: (indexPath: ISpreadsheetIndexPath, animated?: boolean) => void;
+  scrollTo: (input: { x?: number; y?: number; animated?: boolean }) => void;
+  scrollToIndexPath: (
+    indexPath: ISpreadsheetIndexPath,
+    animated?: boolean
+  ) => void;
 };
