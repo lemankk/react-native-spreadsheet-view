@@ -1,0 +1,30 @@
+{
+    "name": "react-native-spreadsheet-view",
+    "version": "0.0.11",
+    "description": "Spreadsheet View for react-native",
+    "private": false,
+    "license": "MIT",
+    "files": [
+        "src/*"
+    ],
+    "main": "./src/index",
+    "author": {
+        "email": "hello@lmswork.com",
+        "name": "LemanK",
+        "url": "https://lmswork.com"
+    },
+    "devDependencies": {
+        "@types/react": "~18.0.0",
+        "@types/react-native": "~0.71.0",
+        "react": "~18.0.0",
+        "react-native": "~0.71.0",
+        "typescript": "~4.5"
+    },
+    "peerDependencies": {
+        "react": "^17.0.0",
+        "react-native": "^0.68.0"
+    },
+    "scripts": {
+        "build": "tsc "
+    }
+}
