@@ -1,6 +1,6 @@
 {
     "name": "react-native-spreadsheet-view",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "Spreadsheet View for react-native",
     "private": false,
     "license": "MIT",
@@ -18,11 +18,13 @@
         "@types/react-native": "~0.71.0",
         "react": "~18.0.0",
         "react-native": "~0.71.0",
+        "react-native-gesture-handler": "^2.0.0",
         "typescript": "~4.5"
     },
     "peerDependencies": {
         "react": "^17.0.0",
-        "react-native": "^0.68.0"
+        "react-native": "^0.68.0",
+        "react-native-gesture-handler": "^2.0.0"
     },
     "scripts": {
         "build": "tsc "
