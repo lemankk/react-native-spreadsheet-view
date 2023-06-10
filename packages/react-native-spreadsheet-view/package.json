@@ -1,9 +1,13 @@
 {
     "name": "react-native-spreadsheet-view",
-    "version": "0.0.13",
+    "version": "0.0.14",
     "description": "Spreadsheet View for react-native",
     "private": false,
     "license": "MIT",
+    "keywords": [
+        "react-native",
+        "spreadsheet"
+    ],
     "files": [
         "src/*"
     ],
@@ -12,6 +16,10 @@
         "email": "hello@lmswork.com",
         "name": "LemanK",
         "url": "https://lmswork.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lemankk/react-native-spreadsheet-view"
     },
     "devDependencies": {
         "@types/react": "~18.0.0",
